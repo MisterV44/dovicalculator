@@ -7,6 +7,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/almostBlack"
+    tools:ignore="HardcodedText"
     tools:context=".MainActivity">
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -50,7 +51,24 @@
 
         <Button
             style="@style/buttonNumber"
-            android:onClick="numberAction"
+            android:text="AC"/>
+        <Button
+            style="@style/buttonNumber"
+            android:text="⌫"/>
+        <Button
+            style="@style/buttonNumber"
+            android:text="%"/>
+        <Button
+            style="@style/buttonOperator"
+            android:text="÷"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/buttonRow">
+
+        <Button
+            style="@style/buttonNumber"
             android:text="7"/>
         <Button
             style="@style/buttonNumber"
@@ -60,8 +78,61 @@
             android:text="9"/>
         <Button
             style="@style/buttonOperator"
-            android:onClick="operationAction"
             android:text="x"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/buttonRow">
+
+        <Button
+            style="@style/buttonNumber"
+            android:text="4"/>
+        <Button
+            style="@style/buttonNumber"
+            android:text="5"/>
+        <Button
+            style="@style/buttonNumber"
+            android:text="6"/>
+        <Button
+            style="@style/buttonOperator"
+            android:text="-"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/buttonRow">
+
+        <Button
+            style="@style/buttonNumber"
+            android:text="1"/>
+        <Button
+            style="@style/buttonNumber"
+            android:text="2"/>
+        <Button
+            style="@style/buttonNumber"
+            android:text="3"/>
+        <Button
+            style="@style/buttonOperator"
+            android:text="+"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/buttonRow">
+
+        <Button
+            style="@style/buttonNumber"
+            android:text="r"/>
+        <Button
+            style="@style/buttonNumber"
+            android:text="0"/>
+        <Button
+            style="@style/buttonNumber"
+            android:text="."/>
+        <Button
+            style="@style/buttonOperator"
+            android:text="="/>
 
     </LinearLayout>
 
