@@ -16,7 +16,7 @@
         android:padding="20dp">
 
         <TextView
-            android:id="@+id/focntionnementecrans"
+            android:id="@+id/fonctionnementEcrans"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text=""
@@ -25,13 +25,13 @@
             android:textColor="@color/white"
             android:textAlignment="textEnd"
             android:textSize="25sp"
-            app:layout_constraintBottom_toTopOf="@+id/resultatecrans"
+            app:layout_constraintBottom_toTopOf="@+id/resultatEcrans"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/resultatecrans"
+            android:id="@+id/resultatEcrans"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text=""
@@ -51,12 +51,17 @@
 
         <Button
             style="@style/buttonNumber"
+            android:textColor="@color/orange"
+            android:onClick="allClearAction"
             android:text="AC"/>
         <Button
             style="@style/buttonNumber"
+            android:textColor="@color/orange"
+            android:onClick="backSpaceAction"
             android:text="⌫"/>
         <Button
             style="@style/buttonNumber"
+            android:textColor="@color/orange"
             android:text="%"/>
         <Button
             style="@style/buttonOperator"
@@ -132,6 +137,9 @@
             android:text="."/>
         <Button
             style="@style/buttonOperator"
+            android:layout_weight="2"
+            android:textSize="40sp"
+            android:onClick="equalsAction"
             android:text="="/>
 
     </LinearLayout>
