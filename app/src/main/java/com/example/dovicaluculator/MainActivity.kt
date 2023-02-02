@@ -16,6 +16,7 @@ class MainActivity : AppCompatActivity() {
 
     var isNewOp=true
     var dot=false
+    var moins = false
 
     fun buNumberEvent(view: View)
     {
@@ -78,7 +79,12 @@ class MainActivity : AppCompatActivity() {
             }
             buPlusMinus.id->
             {
-                buClickValue="-" + buClickValue
+                if(moins==false)
+                {
+                    buClickValue="-" + buClickValue
+                }
+                moins=true
+
             }
         }
         etShowNumber.setText(buClickValue)
@@ -111,6 +117,7 @@ class MainActivity : AppCompatActivity() {
         oldNumber=etShowNumber.text.toString()
         isNewOp=true
         dot=false
+
     }
 
     fun buEqualEvent(view: View)
@@ -152,5 +159,10 @@ class MainActivity : AppCompatActivity() {
         etShowNumber.setText("")
         isNewOp=true
         dot=false
+    }
+
+     fun backSpaceAction(view: View) {
+        val length = etShowNumber.length()
+         etShowNumber.text = etShowNumber.text.subSequence(0, length -1)
     }
     }
