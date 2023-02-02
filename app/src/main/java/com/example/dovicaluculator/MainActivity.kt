@@ -7,8 +7,6 @@ import android.widget.Button
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
-    private var ajouterOperation = false
-    private var ajouterDecimal = false
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -16,181 +14,143 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
     }
 
-    fun numberAction(view: View) {
-        if (view is Button ){
-            if (view.text == ".")
-            {
-                if (ajouterDecimal){
-                    fonctionnementEcrans.append(view.text)
-                    ajouterDecimal = false
-                }
-            }
-            else
-                fonctionnementEcrans.append(view.text)
-            ajouterOperation = true
-        }
-    }
+    var isNewOp=true
+    var dot=false
 
-    fun operationAction(view: View) {
-        if (view is Button && ajouterOperation){
-            fonctionnementEcrans.append(view.text)
-            ajouterOperation = false
-            ajouterDecimal = true
-        }
-    }
-
-
-    fun allClearAction(view: View) {
-        fonctionnementEcrans.text = ""
-        resultatEcrans.text = ""
-    }
-
-    fun backSpaceAction(view: View) {
-        var taille = resultatEcrans.length()
-        if (taille > 0){
-            resultatEcrans.text = fonctionnementEcrans.text.subSequence(0, taille - 1)
-        }
-    }
-
-
-    fun equalsAction(view: View) {
-        resultatEcrans.text = resultatCalcul()
-    }
-
-    private fun resultatCalcul(): String {
-
-        val operateurNumerique = operateurNumerique()
-        if (operateurNumerique.isEmpty()) return "vide"
-
-        val division = divisionCalculate(operateurNumerique)
-        if (division.isEmpty()) return "vide"
-
-        val resultat = ajoutSubtractCalculate(division)
-        return resultat.toString()
-    }
-
-    private fun ajoutSubtractCalculate(passedList: MutableList<Any>): Int {
-        var resultat = passedList[0] as Int
-
-        for (i in passedList.indices){
-            if (passedList[i] is Char && i != passedList.lastIndex)
-            {
-                val operateur = passedList[i]
-                val nextDigit = passedList[i + 1] as Int
-                if (operateur == '+'){
-                    resultat += nextDigit
-                }
-                if (operateur == '-'){
-                    resultat -= nextDigit
-                }
-            }
-        }
-        return resultat
-    }
-
-    private fun divisionCalculate(passedList: MutableList<Any>): MutableList<Any> {
-        var liste = passedList
-        while (liste.contains('x')|| liste.contains('/')){
-            liste = calcDivision(liste)
-        }
-        return liste
-    }
-
-   /* private fun calcDivision(passedList: MutableList<Any>): MutableList<Any> {
-
-        val nouvelleListe = mutableListOf<Any>()
-        var restartIndex = passedList.size
-
-        for (i in passedList.indices)
-        {
-            if (passedList[i] is Char && i != passedList.lastIndex && i < restartIndex)
-            {
-                val operateur = passedList[i]
-                val prevDigit = passedList[i - 1] is Int
-                val nextDigit = passedList[i + 1] is Int
-
-                when(operateur){
-                    'x' -> {
-                        nouvelleListe.add(prevDigit * nextDigit)
-                        restartIndex = i + 1
-                    }
-                    '/' -> {
-                        nouvelleListe.add(prevDigit / nextDigit)
-                        restartIndex = i + 1
-                    }
-                    else ->
-                    {
-                        nouvelleListe.add(prevDigit)
-                        nouvelleListe.add(operateur)
-                    }
-                }
-            }
-            if (i > restartIndex)
-                nouvelleListe.add(passedList[i])
-        }
-
-        return nouvelleListe
-    } */
-
-    private fun calcDivision(passedList: MutableList<Any>): MutableList<Any>
+    fun buNumberEvent(view: View)
     {
-        val newList = mutableListOf<Any>()
-        var restartIndex = passedList.size
-
-        for(i in passedList.indices)
+        if(isNewOp)
         {
-            if(passedList[i] is Char && i != passedList.lastIndex && i < restartIndex)
+            etShowNumber.setText("")
+        }
+        isNewOp=false
+        val buSelect= view as Button
+        var buClickValue:String=etShowNumber.text.toString()
+        when(buSelect.id)
+        {
+            bu0.id->
             {
-                val operator = passedList[i]
-                val prevDigit = passedList[i - 1] as Int
-                val nextDigit = passedList[i + 1] as Int
-                when(operator)
+                buClickValue+="0"
+            }
+            bu1.id->
+            {
+                buClickValue+="1"
+            }
+            bu2.id->
+            {
+                buClickValue+="2"
+            }
+            bu3.id->
+            {
+                buClickValue+="3"
+            }
+            bu4.id->
+            {
+                buClickValue+="4"
+            }
+            bu5.id->
+            {
+                buClickValue+="5"
+            }
+            bu6.id->
+            {
+                buClickValue+="6"
+            }
+            bu7.id->
+            {
+                buClickValue+="7"
+            }
+            bu8.id->
+            {
+                buClickValue+="8"
+            }
+            bu9.id->
+            {
+                buClickValue+="9"
+            }
+            buDot.id->
+            {
+                if(dot==false)
                 {
-                    'x' ->
-                    {
-                        newList.add(prevDigit * nextDigit)
-                        restartIndex = i + 1
-                    }
-                    '/' ->
-                    {
-                        newList.add(prevDigit / nextDigit)
-                        restartIndex = i + 1
-                    }
-                    else ->
-                    {
-                        newList.add(prevDigit)
-                        newList.add(operator)
-                    }
+                    buClickValue += "."
                 }
+                dot=true
             }
-
-            if(i > restartIndex)
-                newList.add(passedList[i])
+            buPlusMinus.id->
+            {
+                buClickValue="-" + buClickValue
+            }
         }
+        etShowNumber.setText(buClickValue)
+    }
+    var op="*"
+    var oldNumber=""
 
-        return newList
+    fun buOpEvent(view: View)
+    {
+        val buSelect= view as Button
+        when(buSelect.id)
+        {
+            buMul.id->
+            {
+                op="*"
+            }
+            buDiv.id->
+            {
+                op="÷"
+            }
+            buSub.id->
+            {
+                op="-"
+            }
+            buSum.id->
+            {
+                op="+"
+            }
+        }
+        oldNumber=etShowNumber.text.toString()
+        isNewOp=true
+        dot=false
     }
 
-
-
-    private fun operateurNumerique(): MutableList<Any>{
-        val liste = mutableListOf<Any>()
-        var operateurCourant = ""
-
-        for (character in fonctionnementEcrans.text){
-            if (character.isDigit() || character == '.'){
-                operateurCourant += character
+    fun buEqualEvent(view: View)
+    {
+        val newNumber=etShowNumber.text.toString()
+        var finalNumber:Double?=null
+        when(op)
+        {
+            "*"->
+            {
+                finalNumber=oldNumber.toDouble() * newNumber.toDouble()
             }
-            else{
-                liste.add(operateurCourant.toInt())
-                operateurCourant = ""
-                liste.add(character)
+            "÷"->
+            {
+                finalNumber=oldNumber.toDouble() / newNumber.toDouble()
+            }
+            "-"->
+            {
+                finalNumber=oldNumber.toDouble() - newNumber.toDouble()
+            }
+            "+"->
+            {
+                finalNumber=oldNumber.toDouble() + newNumber.toDouble()
             }
         }
-        if (operateurCourant != ""){
-            liste.add(operateurCourant.toInt())
-        }
-
-        return liste
+        etShowNumber.setText(finalNumber.toString())
+        isNewOp=true
     }
-}
+
+    fun buPercentEvent(view: View)
+    {
+        val number=(etShowNumber.text.toString().toDouble())/100
+        etShowNumber.setText(number.toString())
+        isNewOp=true
+    }
+
+    fun buCleanEvent(view: View)
+    {
+        etShowNumber.setText("")
+        isNewOp=true
+        dot=false
+    }
+    }
