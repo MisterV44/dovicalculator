@@ -2,6 +2,7 @@ package com.example.dovicaluculator
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.PersistableBundle
 import android.view.View
 import android.widget.Button
 import kotlinx.android.synthetic.main.activity_main.*
@@ -14,8 +15,11 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
     }
 
+
+
+
     var isNewOp=true
-    var dot=false
+    var dot=true
     var moins = false
 
     fun buNumberEvent(view: View)
@@ -71,7 +75,7 @@ class MainActivity : AppCompatActivity() {
             }
             buDot.id->
             {
-                if(dot==false)
+                if(dot==true)
                 {
                     buClickValue += "."
                 }

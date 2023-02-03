@@ -39,23 +39,28 @@
             style="@style/buttonNumber"
             android:textColor="@color/orange"
             android:onClick="buCleanEvent"
+
             android:id="@+id/buAC"
+            android:background="@drawable/radius"
             android:text="AC"/>
         <Button
             style="@style/buttonNumber"
             android:textColor="@color/orange"
             android:onClick="backSpaceAction"
+            android:background="@drawable/radius"
             android:text="⌫"/>
         <Button
             style="@style/buttonNumber"
             android:textColor="@color/orange"
             android:onClick="buPercentEvent"
             android:id="@+id/buPer"
+            android:background="@drawable/radius"
             android:text="%"/>
         <Button
             style="@style/buttonOperator"
             android:text="÷"
             android:id="@+id/buDiv"
+            android:background="@drawable/radius"
             android:onClick="buOpEvent"
 
         />
@@ -70,21 +75,27 @@
             android:text="7"
             android:id="@+id/bu7"
             android:onClick="buNumberEvent"
+
+            android:background="@drawable/radius"
             />
         <Button
             style="@style/buttonNumber"
             android:onClick="buNumberEvent"
             android:id="@+id/bu8"
+            android:background="@drawable/radius"
             android:text="8"/>
+
         <Button
             style="@style/buttonNumber"
             android:onClick="buNumberEvent"
             android:id="@+id/bu9"
+            android:background="@drawable/radius"
             android:text="9"/>
         <Button
             style="@style/buttonOperator"
             android:id="@+id/buMul"
             android:onClick="buOpEvent"
+            android:background="@drawable/radius"
             android:text="*"/>
 
     </LinearLayout>
@@ -96,20 +107,24 @@
             style="@style/buttonNumber"
             android:id="@+id/bu4"
             android:onClick="buNumberEvent"
+            android:background="@drawable/radius"
             android:text="4"/>
         <Button
             style="@style/buttonNumber"
             android:onClick="buNumberEvent"
             android:id="@+id/bu5"
+            android:background="@drawable/radius"
             android:text="5"/>
         <Button
             style="@style/buttonNumber"
             android:onClick="buNumberEvent"
             android:id="@+id/bu6"
+            android:background="@drawable/radius"
             android:text="6"/>
         <Button
             style="@style/buttonOperator"
             android:id="@+id/buSub"
+            android:background="@drawable/radius"
             android:onClick="buOpEvent"
             android:text="-"/>
 
@@ -122,21 +137,25 @@
             style="@style/buttonNumber"
             android:onClick="buNumberEvent"
             android:id="@+id/bu1"
+            android:background="@drawable/radius"
             android:text="1"/>
         <Button
             style="@style/buttonNumber"
             android:onClick="buNumberEvent"
             android:id="@+id/bu2"
+            android:background="@drawable/radius"
             android:text="2"/>
         <Button
             style="@style/buttonNumber"
             android:onClick="buNumberEvent"
             android:id="@+id/bu3"
+            android:background="@drawable/radius"
             android:text="3"/>
         <Button
             style="@style/buttonOperator"
             android:text="+"
             android:id="@+id/buSum"
+            android:background="@drawable/radius"
             android:onClick="buOpEvent"
             />
 
@@ -149,13 +168,14 @@
             style="@style/buttonNumber"
             android:id="@+id/buPlusMinus"
             android:onClick="buNumberEvent"
+            android:background="@drawable/radius"
             android:text="+/-"
             />
 
         <Button
             android:id="@+id/bu0"
             style="@style/buttonNumber"
-
+            android:background="@drawable/radius"
             android:onClick="buNumberEvent"
             android:text="0" />
 
@@ -163,11 +183,13 @@
             style="@style/buttonNumber"
             android:id="@+id/buDot"
             android:onClick="buNumberEvent"
+            android:background="@drawable/radius"
             android:text="."/>
         <Button
             style="@style/buttonOperator"
             android:textSize="40sp"
             android:id="@+id/buEq"
+            android:background="@drawable/radius"
             android:onClick="buEqualEvent"
             android:text="="/>
 
