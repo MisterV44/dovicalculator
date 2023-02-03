@@ -23,7 +23,7 @@
             android:text=""
             android:lines="1"
             android:maxLines="1"
-            android:textColor="@color/white"
+            android:textColor="#00ff00"
             android:textAlignment="textEnd"
             android:textSize="40sp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -40,22 +40,30 @@
             android:textColor="@color/orange"
             android:onClick="buCleanEvent"
             android:id="@+id/buAC"
+            android:background="@drawable/rond"
+            android:layout_marginRight="10dp"
             android:text="AC"/>
         <Button
             style="@style/buttonNumber"
             android:textColor="@color/orange"
             android:onClick="backSpaceAction"
+            android:background="@drawable/rond"
+            android:layout_marginRight="10dp"
             android:text="⌫"/>
         <Button
             style="@style/buttonNumber"
             android:textColor="@color/orange"
             android:onClick="buPercentEvent"
             android:id="@+id/buPer"
+            android:background="@drawable/rond"
+            android:layout_marginRight="10dp"
             android:text="%"/>
         <Button
             style="@style/buttonOperator"
             android:text="÷"
             android:id="@+id/buDiv"
+            android:background="@drawable/rond"
+            android:layout_marginRight="10dp"
             android:onClick="buOpEvent"
 
             />
@@ -68,24 +76,36 @@
             android:id="@+id/bu7"
             style="@style/buttonNumber"
             android:onClick="buNumberEvent"
+            android:background="@drawable/rond"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="10dp"
             android:text="7" />
 
         <Button
             android:id="@+id/bu8"
             style="@style/buttonNumber"
             android:onClick="buNumberEvent"
+            android:background="@drawable/rond"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="10dp"
             android:text="8" />
 
         <Button
             android:id="@+id/bu9"
             style="@style/buttonNumber"
             android:onClick="buNumberEvent"
+            android:background="@drawable/rond"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="10dp"
             android:text="9" />
 
         <Button
             android:id="@+id/buMul"
             style="@style/buttonOperator"
             android:onClick="buOpEvent"
+            android:background="@drawable/rond"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="10dp"
             android:text="*" />
 
     </LinearLayout>
@@ -97,21 +117,33 @@
             style="@style/buttonNumber"
             android:id="@+id/bu4"
             android:onClick="buNumberEvent"
+            android:background="@drawable/rond"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="10dp"
             android:text="4"/>
         <Button
             style="@style/buttonNumber"
             android:onClick="buNumberEvent"
             android:id="@+id/bu5"
+            android:background="@drawable/rond"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="10dp"
             android:text="5"/>
         <Button
             style="@style/buttonNumber"
             android:onClick="buNumberEvent"
             android:id="@+id/bu6"
+            android:background="@drawable/rond"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="10dp"
             android:text="6"/>
         <Button
             style="@style/buttonOperator"
             android:id="@+id/buSub"
             android:onClick="buOpEvent"
+            android:background="@drawable/rond"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="10dp"
             android:text="-"/>
 
     </LinearLayout>
@@ -123,21 +155,33 @@
             style="@style/buttonNumber"
             android:onClick="buNumberEvent"
             android:id="@+id/bu1"
+            android:background="@drawable/rond"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="10dp"
             android:text="1"/>
         <Button
             style="@style/buttonNumber"
             android:onClick="buNumberEvent"
             android:id="@+id/bu2"
+            android:background="@drawable/rond"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="10dp"
             android:text="2"/>
         <Button
             style="@style/buttonNumber"
             android:onClick="buNumberEvent"
             android:id="@+id/bu3"
+            android:background="@drawable/rond"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="10dp"
             android:text="3"/>
         <Button
             style="@style/buttonOperator"
             android:text="+"
             android:id="@+id/buSum"
+            android:background="@drawable/rond"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="10dp"
             android:onClick="buOpEvent"
             />
 
@@ -150,20 +194,28 @@
             style="@style/buttonNumber"
             android:id="@+id/buPlusMinus"
             android:onClick="buNumberEvent"
+            android:background="@drawable/rond"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="10dp"
             android:text="+/-"
             />
 
         <Button
             android:id="@+id/bu0"
             style="@style/buttonNumber"
-
+            android:background="@drawable/rond"
             android:onClick="buNumberEvent"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="10dp"
             android:text="0" />
 
         <Button
             style="@style/buttonNumber"
             android:id="@+id/buDot"
             android:onClick="buNumberEvent"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/rond"
+            android:layout_marginRight="10dp"
             android:text="."/>
         <Button
             style="@style/buttonOperator"
@@ -171,6 +223,9 @@
             android:textSize="40sp"
             android:id="@+id/buEq"
             android:onClick="buEqualEvent"
+            android:background="@drawable/rond"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="10dp"
             android:text="="/>
 
     </LinearLayout>
