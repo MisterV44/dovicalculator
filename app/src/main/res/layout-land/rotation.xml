@@ -58,34 +58,35 @@
             android:id="@+id/buDiv"
             android:onClick="buOpEvent"
 
-        />
+            />
 
     </LinearLayout>
 
-    <LinearLayout
-        style="@style/buttonRow">
+    <LinearLayout style="@style/buttonRow">
 
         <Button
-            style="@style/buttonNumber"
-            android:text="7"
             android:id="@+id/bu7"
-            android:onClick="buNumberEvent"
-            />
-        <Button
             style="@style/buttonNumber"
             android:onClick="buNumberEvent"
+            android:text="7" />
+
+        <Button
             android:id="@+id/bu8"
-            android:text="8"/>
-        <Button
             style="@style/buttonNumber"
             android:onClick="buNumberEvent"
-            android:id="@+id/bu9"
-            android:text="9"/>
+            android:text="8" />
+
         <Button
-            style="@style/buttonOperator"
+            android:id="@+id/bu9"
+            style="@style/buttonNumber"
+            android:onClick="buNumberEvent"
+            android:text="9" />
+
+        <Button
             android:id="@+id/buMul"
+            style="@style/buttonOperator"
             android:onClick="buOpEvent"
-            android:text="*"/>
+            android:text="*" />
 
     </LinearLayout>
 
@@ -166,6 +167,7 @@
             android:text="."/>
         <Button
             style="@style/buttonOperator"
+
             android:textSize="40sp"
             android:id="@+id/buEq"
             android:onClick="buEqualEvent"
